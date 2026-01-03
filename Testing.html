@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Get Free Key Code</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #111827;
+      padding: 24px 28px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      max-width: 360px;
+      width: 100%;
+      text-align: center;
+    }
+    h1 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    p {
+      font-size: 14px;
+      margin-bottom: 16px;
+      color: #9ca3af;
+    }
+    #keyBox {
+      font-family: "Consolas", "Courier New", monospace;
+      font-size: 18px;
+      letter-spacing: 2px;
+      padding: 10px 12px;
+      border-radius: 6px;
+      background: #020617;
+      border: 1px solid #1f2937;
+      color: #facc15;
+      min-height: 26px;
+      margin-bottom: 16px;
+      word-break: break-all;
+    }
+    button {
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      background: linear-gradient(135deg, #4f46e5, #06b6d4);
+      color: #f9fafb;
+      transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.1s ease;
+      box-shadow: 0 6px 14px rgba(15,118,110,0.4);
+    }
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(15,118,110,0.5);
+      opacity: 0.95;
+    }
+    button:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 10px rgba(15,118,110,0.4);
+      opacity: 0.9;
+    }
+    .note {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Get Your Free Key</h1>
+    <p>Click the button below to generate a random key code.</p>
+
+    <div id="keyBox">Your key will appear here</div>
+
+    <button onclick="generateKey()">Get Free Key</button>
+
+    <div class="note">
+      Example format: XXXX-XXXX-XXXX-XXXX (A–Z, 0–9)
+    </div>
+  </div>
+
+  <script>
+    function generateKey() {
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+      const keyLength = 16; // total characters (without dashes)
+      let raw = "";
+
+      for (let i = 0; i < keyLength; i++) {
+        const randIndex = Math.floor(Math.random() * chars.length);
+        raw += chars.charAt(randIndex);
+      }
+
+      // Format as XXXX-XXXX-XXXX-XXXX
+      const formatted = raw.match(/.{1,4}/g).join("-");
+
+      document.getElementById("keyBox").textContent = formatted;
+    }
+  </script>
+</body>
+</html>
